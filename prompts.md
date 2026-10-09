@@ -176,7 +176,29 @@ Completar después de comprobar que la interfaz contiene ambos métodos y que no
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 2: Hacer que CartItem implemente CartProduct
 
@@ -202,7 +224,29 @@ Completar después de verificar que `CartItem` implementa la interfaz y que cons
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 3: Crear GiftWrap
 
@@ -228,7 +272,29 @@ Completar después de comprobar que el extra suma CRC 1,500, agrega la descripci
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 4: Crear Insurance
 
@@ -254,7 +320,29 @@ Completar después de comprobar que el seguro agrega el 5 % al precio que recibe
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 5: Crear Express
 
@@ -280,7 +368,29 @@ Completar después de comprobar que el extra suma CRC 2,500 y agrega la descripc
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 6: Actualizar InvoicePrinter
 
@@ -306,7 +416,29 @@ Completar después de comprobar que la factura conserva exactamente su formato y
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 7: Cambiar Cart para aceptar CartProduct
 
@@ -332,7 +464,29 @@ Completar después de comprobar que el carrito acepta la interfaz y que los art�
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 8: Usar los extras desde Main
 
@@ -358,7 +512,29 @@ Completar después de comprobar que los extras se pueden combinar en tiempo de e
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 9: Crear un cuarto extra sin modificar clases existentes
 
@@ -384,7 +560,29 @@ Completar después de comprobar que se agregó el nuevo extra sin modificar clas
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ---
 
@@ -415,7 +613,29 @@ Completar después de comprobar que la nueva clase coordina los servicios existe
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 2: Actualizar WebCheckout
 
@@ -441,7 +661,29 @@ Completar después de verificar que el canal web delega en `CheckoutFacade` y co
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
 
 ### Prompt 3: Actualizar KioskCheckout
 
@@ -467,5 +709,27 @@ Completar después de comprobar que ambos clientes delegan en `CheckoutFacade`, 
 
 #### Resultado de compilación
 
-[Pegar la compilación y ejecución.]
 
+```text
+PS C:\TEC\2-Semestre\POO\tecshop> javac -encoding UTF-8 -d out *.java
+PS C:\TEC\2-Semestre\POO\tecshop> java -cp out tecshop.Main
+Inventory: reserved 3 items
+Payment: charged CRC 61,832.00 via credit card
+----- INVOICE: Ana -----
+  Laptop stand + gift wrap + express  CRC 29,000.00
+  USB-C hub + insurance  CRC 18,900.00
+  Notebook  CRC 3,500.00
+  Subtotal: CRC 51,400.00
+  Tax:      CRC 6,682.00
+  Shipping: CRC 3,750.00
+  TOTAL:    CRC 61,832.00
+
+Inventory: reserved 1 items
+Payment: charged CRC 53,592.75 via SINPE Movil
+----- INVOICE: Luis -----
+  Mechanical keyboard + gift wrap + insurance  CRC 45,675.00
+  Subtotal: CRC 45,675.00
+  Tax:      CRC 5,937.75
+  Shipping: CRC 1,980.00
+  TOTAL:    CRC 53,592.75
+```
