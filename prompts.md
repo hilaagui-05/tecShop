@@ -1,5 +1,6 @@
 # Week #11 - Activity: Detectalo y luego dirigí a la IA
 
+## Grupo: Hilary Aguilar y Arina Tarasova
 ## Paso 1: Mapa de problemas
 
 | #  | Dónde (clase.método)                          | Síntoma: ¿qué va a doler cuando el código cambie?                                                                                                              | ¿Quién sabe demasiado?          | ¿Qué clase(s) existente(s) dejarían intactas?                                        |
@@ -168,11 +169,19 @@ TERMINADO: El proyecto compila con javac -encoding UTF-8 -d out *.java. Mostrame
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que la interfaz contiene ambos métodos y que no se modificaron otros archivos.
+La IA creó correctamente la interfaz CartProduct con los métodos getPrice() y describe(). No modificó las clases existentes y la ejecución del programa conservó la salida original.
 
 #### Salida obtenida
 
-[Pegar `CartProduct.java`.]
+```java
+package tecshop;
+
+public interface CartProduct {
+    double getPrice();
+
+    String describe();
+}
+```
 
 #### Resultado de compilación
 
@@ -216,11 +225,49 @@ TERMINADO: Compila y ejecuta Main. La salida debe coincidir exactamente con la s
 
 #### Evaluación de la respuesta
 
-Completar después de verificar que `CartItem` implementa la interfaz y que conserva el comportamiento original.
+La IA hizo que CartItem implementara CartProduct y agregó las anotaciones @Override a los métodos correspondientes. Conservó los atributos, el constructor y la lógica original para calcular los precios y generar las descripciones. La salida del programa permaneció igual.
 
 #### Salida obtenida
 
-[Pegar `CartItem.java`.]
+```java
+public CartItem(String name, double basePrice, boolean giftWrap, boolean insurance, boolean express) {
+    this.name = name;
+    this.basePrice = basePrice;
+    this.giftWrap = giftWrap;
+    this.insurance = insurance;
+    this.express = express;
+}
+
+@Override
+public double getPrice() {
+    double price = basePrice;
+    if (giftWrap) {
+        price += 1500;
+    }
+    if (insurance) {
+        price += price * 0.05;
+    }
+    if (express) {
+        price += 2500;
+    }
+    return price;
+}
+
+@Override
+public String describe() {
+    String text = name;
+    if (giftWrap) {
+        text += " + gift wrap";
+    }
+    if (insurance) {
+        text += " + insurance";
+    }
+    if (express) {
+        text += " + express";
+    }
+    return text;
+}
+```
 
 #### Resultado de compilación
 
@@ -264,11 +311,25 @@ TERMINADO: Compila y ejecuta Main. Como esta clase todavía no se usa, la salida
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que el extra suma CRC 1,500, agrega la descripción indicada y no modifica el artículo original.
+La IA creó GiftWrap como una implementación de CartProduct. La clase recibe un artículo mediante el constructor, suma CRC 1,500 a su precio y agrega + gift wrap a su descripción. Como el extra todavía no se utiliza en las compras, la salida original no cambió.
 
 #### Salida obtenida
 
-[Pegar `GiftWrap.java`.]
+```java
+public GiftWrap(CartProduct item) {
+    this.item = item;
+}
+
+@Override
+public double getPrice() {
+    return item.getPrice() + 1500;
+}
+
+@Override
+public String describe() {
+    return item.describe() + " + gift wrap";
+}
+```
 
 #### Resultado de compilación
 
@@ -312,11 +373,25 @@ TERMINADO: Compila y ejecuta Main. Como esta clase todavía no se usa, la salida
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que el seguro agrega el 5 % al precio que recibe y añade la descripción correcta.
+La IA creó Insurance como una implementación de CartProduct. El precio se calcula aplicando un incremento del 5 % al precio recibido y la descripción agrega + insurance. No modificó otras clases y la salida del programa se mantuvo igual.
 
 #### Salida obtenida
 
-[Pegar `Insurance.java`.]
+```java
+public Insurance(CartProduct item) {
+    this.item = item;
+}
+
+@Override
+public double getPrice() {
+    return item.getPrice() * 1.05;
+}
+
+@Override
+public String describe() {
+    return item.describe() + " + insurance";
+}
+```
 
 #### Resultado de compilación
 
@@ -360,11 +435,25 @@ TERMINADO: Compila y ejecuta Main. Como esta clase todavía no se usa, la salida
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que el extra suma CRC 2,500 y agrega la descripción correcta.
+La IA creó Express como una implementación de CartProduct. El extra suma CRC 2,500 al precio recibido y agrega + express a la descripción. La clase puede utilizarse junto con otros extras y, al no estar todavía incorporada a las compras, la salida original permaneció igual.
 
 #### Salida obtenida
 
-[Pegar `Express.java`.]
+```java
+public Express(CartProduct item) {
+    this.item = item;
+}
+
+@Override
+public double getPrice() {
+    return item.getPrice() + 2500;
+}
+
+@Override
+public String describe() {
+    return item.describe() + " + express";
+}
+```
 
 #### Resultado de compilación
 
@@ -408,11 +497,22 @@ TERMINADO: Compila y ejecuta Main. La salida debe coincidir exactamente con la s
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que la factura conserva exactamente su formato y puede imprimir artículos mediante `CartProduct`.
+La IA modificó InvoicePrinter para recorrer los artículos como objetos de tipo CartProduct, utilizando describe() y getPrice(). Conservó el formato de impresión y los cálculos de la factura. La salida coincidió con la original.
 
 #### Salida obtenida
 
-[Pegar `InvoicePrinter.java`.]
+```
+package tecshop;
+
+public class InvoicePrinter {
+    public void print(String customer, Cart cart, double tax, double shipping, double total) {
+        System.out.println("----- INVOICE: " + customer + " -----");
+        for (CartProduct item : cart.getItems()) {
+            System.out.println("  " + item.describe() + "  " + Money.format(item.getPrice()));
+        }
+        System.out.println("  Subtotal: " + Money.format(cart.getSubtotal()));}
+}
+```
 
 #### Resultado de compilación
 
@@ -456,11 +556,34 @@ TERMINADO: Compila y ejecuta Main. La salida debe coincidir exactamente con la s
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que el carrito acepta la interfaz y que los artículos originales continúan funcionando.
+La IA actualizó Cart para almacenar y devolver una lista de CartProduct, y permitió agregar artículos mediante esa interfaz. También conservó el cálculo del subtotal y el peso del carrito. Los artículos originales siguieron funcionando y la salida no cambió.
 
 #### Salida obtenida
+```java
+public Cart(double weightKg) {
+    this.weightKg = weightKg;
+}
 
-[Pegar de `Cart.java`.]
+public void add(CartProduct item) {
+    items.add(item);
+}
+
+public List<CartProduct> getItems() {
+    return items;
+}
+
+public double getWeightKg() {
+    return weightKg;
+}
+
+public double getSubtotal() {
+    double subtotal = 0;
+    for (CartProduct item : items) {
+        subtotal += item.getPrice();
+    }
+    return subtotal;
+}
+```
 
 #### Resultado de compilación
 
@@ -504,11 +627,26 @@ TERMINADO: Compila y ejecuta Main. La salida debe coincidir exactamente con la s
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que los extras se pueden combinar en tiempo de ejecución y que los montos y las descripciones coinciden con la salida base.
+La IA modificó Main para crear los artículos con los extras correspondientes, conservando los mismos productos, precios base, pesos y datos de compra. Los extras se aplicaron en el orden solicitado, por lo que las descripciones y los montos finales coincidieron con la salida original.
 
 #### Salida obtenida
+```
+public class Main {
+    public static void main(String[] args) {
+        Cart webCart = new Cart(2.3);
+        webCart.add(new Express(new GiftWrap(new CartItem("Laptop stand", 25000, false, false, false))));
+        webCart.add(new Insurance(new CartItem("USB-C hub", 18000, false, false, false)));
+        webCart.add(new CartItem("Notebook", 3500, false, false, false));
+        new WebCheckout().buy(webCart, "Ana", "Cartago");
 
-[Pegar `Main.java`.]
+        System.out.println();
+
+        Cart kioskCart = new Cart(0.8);
+        kioskCart.add(new Insurance(new GiftWrap(new CartItem("Mechanical keyboard", 42000, false, false, false))));
+        new KioskCheckout().buy(kioskCart, "Luis", "San Jose");
+    }
+}
+```
 
 #### Resultado de compilación
 
@@ -552,11 +690,29 @@ TERMINADO: Compila y ejecuta Main. La salida debe seguir siendo idéntica a la s
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que se agregó el nuevo extra sin modificar clases existentes y que la salida de las compras actuales no cambió.
+La IA creó Engraving como una nueva implementación de CartProduct. El grabado suma CRC 3,000 y agrega + engraving a la descripción. No fue necesario modificar las clases existentes ni utilizar el nuevo extra en las compras actuales, por lo que la salida original se conservó.
 
 #### Salida obtenida
+```
+package tecshop;
 
-[Pegar `Engraving.java`.]
+public class Engraving implements CartProduct {
+    private final CartProduct item;
+
+    public Engraving(CartProduct item) {
+        this.item = item;
+    }
+
+    @Override
+    public double getPrice() {
+        return item.getPrice() + 3000;
+    }
+
+    @Override
+    public String describe() {
+        return item.describe() + " + engraving";
+    }}
+```
 
 #### Resultado de compilación
 
@@ -605,12 +761,34 @@ TERMINADO: Mostrame únicamente CheckoutFacade.java completo. Si los nombres o c
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que la nueva clase coordina los servicios existentes en el mismo orden y que no vuelve a implementar sus responsabilidades.
+La IA creó CheckoutFacade para centralizar el proceso de compra. La clase coordina la reserva de artículos, el cálculo del subtotal y los impuestos, la cotización del envío, el cobro y la impresión de la factura mediante los servicios existentes. La salida del programa conservó los montos y mensajes originales.
 
 #### Salida obtenida
 
-[Pegar `CheckoutFacade.java`.]
+```
+package tecshop;
 
+public class CheckoutFacade {
+    public void checkout(Cart cart, String customer, String city, String provider, String paymentMethod) {
+        Inventory inventory = new Inventory();
+        inventory.reserve(cart);
+
+        TaxCalculator taxCalculator = new TaxCalculator();
+        double subtotal = cart.getSubtotal();
+        double tax = taxCalculator.tax(subtotal);
+
+        ShippingService shipping = new ShippingService();
+        double shippingCost = shipping.quote(provider, cart.getWeightKg(), city);
+
+        double total = subtotal + tax + shippingCost;
+        PaymentGateway gateway = new PaymentGateway();
+        gateway.charge(paymentMethod, total);
+
+        InvoicePrinter printer = new InvoicePrinter();
+        printer.print(customer, cart, tax, shippingCost, total);
+    }
+}
+```
 #### Resultado de compilación
 
 ```text
@@ -653,11 +831,19 @@ TERMINADO: Compila y ejecuta Main. La salida debe coincidir exactamente con la s
 
 #### Evaluación de la respuesta
 
-Completar después de verificar que el canal web delega en `CheckoutFacade` y conserva el proveedor y el método de pago originales.
+La IA hizo que el canal web delegara el proceso de compra en CheckoutFacade, manteniendo el proveedor correos y el método de pago credit card. La compra se ejecutó correctamente y la salida permaneció igual a la original.
 
 #### Salida obtenida
 
-[Pegar `WebCheckout.java`.]
+```
+package tecshop;
+
+public class WebCheckout {
+public void buy(Cart cart, String customer, String city) {
+new CheckoutFacade().checkout(cart, customer, city, "correos", "credit card");
+}
+}
+```
 
 #### Resultado de compilación
 
@@ -701,12 +887,19 @@ TERMINADO: Compila y ejecuta Main. La salida debe coincidir exactamente con la s
 
 #### Evaluación de la respuesta
 
-Completar después de comprobar que ambos clientes delegan en `CheckoutFacade`, conservan sus proveedores y métodos de pago y no duplican el proceso de compra.
+La IA modificó KioskCheckout para delegar el proceso de compra en CheckoutFacade, conservando el proveedor local y el método de pago SINPE Movil. De esta manera, ambos canales utilizan una misma clase para coordinar la secuencia de compra sin cambiar el resultado de las facturas.
 
 #### Salida obtenida
 
-[Pegar `KioskCheckout.java`.]
+```
+package tecshop;
 
+public class KioskCheckout {
+public void buy(Cart cart, String customer, String city) {
+new CheckoutFacade().checkout(cart, customer, city, "local", "SINPE Movil");
+}
+}
+```
 #### Resultado de compilación
 
 
